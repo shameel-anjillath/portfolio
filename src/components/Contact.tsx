@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                     <h4 className="font-medium">LinkedIn</h4>
                     <p className="text-gray-600 dark:text-gray-400">
                       <a 
-                        href="https://www.linkedin.com/in/muhammedshameeela/" 
+                        href="https://www.linkedin.com/in/muhammedshameela/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="hover:text-portfolio-purple"

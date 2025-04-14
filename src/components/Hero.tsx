@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
 
             <div className="flex gap-4 animate-fade-in animate-delay-500">
               <a 
-                href="https://www.linkedin.com/in/muhammedshameeela/" 
+                href="https://www.linkedin.com/in/muhammedshameela/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-portfolio-soft-purple text-portfolio-purple flex items-center justify-center transition-transform hover:scale-110"
@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
                 <Linkedin size={18} />
               </a>
               <a 
-                href="https://github.com" 
+                href ="https://github.com/shameel-anjillath" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-portfolio-soft-purple text-portfolio-purple flex items-center justify-center transition-transform hover:scale-110"
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
               <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-portfolio-purple rounded-full absolute -z-10 -top-3 -right-3"></div>
               <div className="border-8 border-white dark:border-gray-800 overflow-hidden rounded-2xl shadow-xl">
                 <img 
-                  src="/lovable-uploads/ff9d56bf-4359-4084-8b7d-774405b07aae.png" 
+                  src="/lovable-uploads/shameel.jpg" 
                   alt="Muhammed Shameel A" 
                   className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover"
                 />

@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           
           <div className="flex gap-6 mb-8">
             <a 
-              href="https://www.linkedin.com/in/muhammedshameeela/" 
+              href="https://www.linkedin.com/in/muhammedshameela/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-portfolio-purple transition-colors flex items-center justify-center"
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               <Linkedin size={18} />
             </a>
             <a 
-              href="https://github.com" 
+              href ="https://github.com/shameel-anjillath" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gray-800 hover:bg-portfolio-purple transition-colors flex items-center justify-center"
