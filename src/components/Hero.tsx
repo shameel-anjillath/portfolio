@@ -1,13 +1,21 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
 import ThreeBackground from './ThreeBackground';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [threeJsError, setThreeJsError] = useState(false);
 
   useEffect(() => {
+    // Catch potential WebGL errors
+    const handleError = () => {
+      setThreeJsError(true);
+    };
+    
+    window.addEventListener('error', handleError);
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,6 +30,7 @@ const Hero: React.FC = () => {
     }
 
     return () => {
+      window.removeEventListener('error', handleError);
       if (containerRef.current) {
         observer.unobserve(containerRef.current);
       }
@@ -30,7 +39,10 @@ const Hero: React.FC = () => {
 
   return (
     <section id="about" className="pt-20 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
-      <ThreeBackground />
+      {!threeJsError && <ThreeBackground />}
+      {threeJsError && (
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-portfolio-soft-purple to-portfolio-purple opacity-10"></div>
+      )}
       <div 
         ref={containerRef}
         className="container mx-auto px-4 sm:px-6 lg:px-8 opacity-0 transition-opacity duration-1000 relative z-10"
