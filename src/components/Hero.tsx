@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
-import { Download, GitHub, Linkedin, Mail } from 'lucide-react';
+import { Download, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-portfolio-soft-purple text-portfolio-purple flex items-center justify-center transition-transform hover:scale-110"
               >
-                <GitHub size={18} />
+                <Github size={18} />
               </a>
               <a 
                 href="mailto:shamee.anjillath@gmail.com" 
