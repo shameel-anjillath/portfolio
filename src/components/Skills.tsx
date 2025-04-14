@@ -2,7 +2,8 @@
 import React, { useEffect, useRef } from 'react';
 import { 
   Code, Database, GitBranch, Globe, 
-  Laptop, Layout, Terminal, Server 
+  Laptop, Layout, Terminal, Server, 
+  Component 
 } from 'lucide-react';
 
 interface SkillCategory {
@@ -82,6 +83,11 @@ const Skills: React.FC = () => {
       name: "Runtime Environment",
       icon: <Terminal className="text-portfolio-purple h-6 w-6" />,
       skills: ["Node.JS"]
+    },
+    {
+      name: "Low-Code App Development",
+      icon: <Component className="text-portfolio-purple h-6 w-6" />,
+      skills: ["Zoho Creator", "AppGyver", "OutSystems", "Mendix"]
     }
   ];
 
@@ -118,7 +124,7 @@ const Skills: React.FC = () => {
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-center mb-8">Penetration Testing Tools</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {["Burp suite", "Metasploit", "Nmap", "Wireshark", "Zoho Creator", "Zoho Creator Development"].map((tool, index) => (
+            {["Burp suite", "Metasploit", "Nmap", "Wireshark", "OWASP ZAP", "SQLmap"].map((tool, index) => (
               <div 
                 key={index}
                 className="skill-item opacity-0 bg-portfolio-soft-purple dark:bg-gray-800 rounded-full py-3 px-6 flex justify-center"
