@@ -1,22 +1,42 @@
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Mail, Phone, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    // Reset form
-    (e.target as HTMLFormElement).reset();
+    
+    try {
+      const result = await emailjs.sendForm(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        formRef.current!,
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+      );
+
+      if (result.text === 'OK') {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        formRef.current?.reset();
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive"
+      });
+      console.error('EmailJS Error:', error);
+    }
   };
 
   return (
@@ -100,25 +120,27 @@ const Contact: React.FC = () => {
             <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
               <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Name
                     </label>
                     <Input 
-                      id="name" 
+                      id="from_name"
+                      name="from_name" 
                       placeholder="Your name" 
                       required 
                       className="focus-visible:ring-portfolio-purple"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                       Email
                     </label>
                     <Input 
-                      id="email" 
+                      id="user_email"
+                      name="user_email" 
                       type="email" 
                       placeholder="Your email" 
                       required 
@@ -132,7 +154,8 @@ const Contact: React.FC = () => {
                     Subject
                   </label>
                   <Input 
-                    id="subject" 
+                    id="subject"
+                    name="subject" 
                     placeholder="Subject" 
                     required 
                     className="focus-visible:ring-portfolio-purple"
@@ -144,7 +167,8 @@ const Contact: React.FC = () => {
                     Message
                   </label>
                   <Textarea 
-                    id="message" 
+                    id="message"
+                    name="message" 
                     placeholder="Your message" 
                     required 
                     className="min-h-[150px] focus-visible:ring-portfolio-purple"
