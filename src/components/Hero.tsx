@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Download, Github, Linkedin, Mail } from 'lucide-react';
+import ThreeBackground from './ThreeBackground';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,9 +30,10 @@ const Hero: React.FC = () => {
 
   return (
     <section id="about" className="pt-20 md:pt-32 pb-16 md:pb-24 relative overflow-hidden">
+      <ThreeBackground />
       <div 
         ref={containerRef}
-        className="container mx-auto px-4 sm:px-6 lg:px-8 opacity-0 transition-opacity duration-1000"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 opacity-0 transition-opacity duration-1000 relative z-10"
       >
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="w-full md:w-3/5">
