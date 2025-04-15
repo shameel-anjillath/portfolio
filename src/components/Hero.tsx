@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
               <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-portfolio-purple rounded-full absolute -z-10 -top-3 -right-3"></div>
               <div className="border-8 border-white dark:border-gray-800 overflow-hidden rounded-2xl shadow-xl">
                 <img 
-                  src="/lovable-uploads/shameel.jpg" 
+                  src="/lovable-uploads/shameel.png" 
                   alt="Muhammed Shameel A" 
                   className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover"
                 />
