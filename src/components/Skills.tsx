@@ -77,7 +77,7 @@ const Skills: React.FC = () => {
     {
       name: "API",
       icon: <Server className="text-portfolio-purple h-6 w-6" />,
-      skills: ["RESTful APIs", "GraphQL", "Mapmindia", "Mappls API"]
+      skills: ["RESTful APIs", "GraphQL", "Mappls API"]
     },
     {
       name: "Runtime Environment",
@@ -87,7 +87,7 @@ const Skills: React.FC = () => {
     {
       name: "Low-Code App Development",
       icon: <Component className="text-portfolio-purple h-6 w-6" />,
-      skills: ["Zoho Creator", "AppGyver", "OutSystems", "Mendix"]
+      skills: ["Zoho Creator"]
     }
   ];
 
