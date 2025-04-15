@@ -55,10 +55,12 @@ const Hero: React.FC = () => {
                 <Mail size={16} />
                 <a href="mailto:shamee.anjillath@gmail.com">Contact Me</a>
               </Button>
+              <a href="/MuhammedShameelA.pdf" download>
               <Button variant="outline" className="border-portfolio-purple text-portfolio-purple hover:bg-portfolio-soft-purple flex items-center gap-2">
                 <Download size={16} />
                 Download CV
               </Button>
+              </a>
             </div>
 
             <div className="flex gap-4 animate-fade-in animate-delay-500">
@@ -92,9 +94,9 @@ const Hero: React.FC = () => {
               <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-portfolio-purple rounded-full absolute -z-10 -top-3 -right-3"></div>
               <div className="border-8 border-white dark:border-gray-800 overflow-hidden rounded-2xl shadow-xl">
                 <img 
-                  src="/lovable-uploads/shameel.png" 
+                  src={`${import.meta.env.BASE_URL}shameel.png`} 
                   alt="Muhammed Shameel A" 
-                  className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover"
+                  className="w-64 h-66 md:w-72 md:h-74 lg:w-80 lg:h-82 object-cover"
                 />
               </div>
             </div>
